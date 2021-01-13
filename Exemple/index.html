@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      input[type="text"] {
+        font: 24pt monospace;
+        border: solid 1px #cccccc;
+        padding: 10px;
+        text-align: center;
+        color: #ee6600;
+        margin: 10px;
+        width: 200px;
+      }
+    </style>
+    <script>
+      i = 10;
+      function compteur() {
+        t = setTimeout("compteur()", 1000);
+        if (i > 0) {
+          document.fo.cpt.value = i;
+          i -= 1;
+        } else {
+          clearTimeout(t);
+          document.fo.cpt.value = "Fin";
+        }
+      }
+      function init() {
+        document.fo.cpt.value = i;
+      }
+    </script>
+  </head>
+  <body onload="init()">
+    <center>
+      <form name="fo">
+        <input type="text" name="cpt" readonly /><br />
+        <input type="button" value="Commencer" onclick="compteur()" />
+      </form>
+    </center>
+  </body>
+</html>
