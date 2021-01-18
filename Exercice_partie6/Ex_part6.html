@@ -4,20 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-  </head>
-  <body>
     <script>
       var i = 0;
-      var text = "Lorem ipsum dummy text blabla.";
-      var speed = 50;
+      var txt1 = "Bonjour à tous";
+      var txt2 = "Cette phrase";
+      var txt3 = "est affiché";
+      var txt4 = "lettre par lettre";
 
-      function typeWriter() {
-        if (i < txt.length) {
-          document.getElementById("demo").innerHTML += txt.charAt(i);
+      function afficher() {
+        var text = txt1 + "\n" + txt2 + "\n" + txt3 + "\n" + txt4;
+        if (i < text.length) {
+          document.getElementById("zoneTxt").value += text.charAt(i);
           i++;
-          setTimeout(typeWriter, speed);
+          setTimeout(afficher, 200);
         }
       }
     </script>
+  </head>
+  <body onload="afficher()">
+    <textarea id="zoneTxt" cols="30" rows="5"></textarea>
   </body>
 </html>
